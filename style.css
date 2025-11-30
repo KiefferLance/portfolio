@@ -1,30 +1,503 @@
-/* Default Light Theme */
+:root {
+  --text-color: #1a1c20;
+  --link-color: #4a76ee;
+  --background-color: #eeeff1;
+}
+
+html.dark {
+  --text-color: #e6eef8;
+  --link-color: #73a6ff;
+  --background-color: #0f1720;
+}
+.darkmode{
+	  --text-color: #eeeff1;
+  --link-color: #7aa7ff;
+  --background-color: #1a1c20;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-	font-family: Arial, sans-serif;
-	background-color: #f5f5f5;
-	color: #333;
-	margin: 0;
-	padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  max-width: 1400px;
+  margin: 0 auto;
+  transition: background-color .5s ease, color .5s ease;
 }
 
-header {
-	text-align: center;
-	margin-bottom: 30px;
+a {
+  color: var(--link-color);
+  text-decoration: none;
 }
 
-#profile-img {
-	width: 150px;
-	border-radius: 50%;
+/* NAVBAR */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 50px;
+  height: 80px;
 }
 
-button {
-	padding: 10px 20px;
-	margin-top: 10px;
-	cursor: pointer;
+nav .left a {
+  color: var(--text-color);
+  font-size: 22px;
+  font-weight: 600;
 }
 
-/* Dark Theme */
-body.dark {
-	background-color: #121212;
-	color: #f5f5f5;
+nav .right a {
+  color: var(--text-color);
+  margin: 0 10px;
+}
+
+nav .right a:last-child {
+  color: var(--background-color);
+  background-color: var(--text-color);
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+
+nav .right a span {
+  margin-left: 5px;
+}
+
+/* Theme toggle button - Smooth sliding switch */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--background-color);
+  border: 2px solid var(--link-color);
+  color: var(--text-color);
+  width: 50px;
+  height: 28px;
+  margin-left: 8px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 0 4px;
+  position: relative;
+  transition: background-color .3s ease, border-color .3s ease;
+}
+
+.theme-toggle i {
+  font-size: 14px;
+  z-index: 2;
+  transition: color .3s ease;
+}
+
+.theme-toggle::after {
+  content: '';
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  background-color: var(--link-color);
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  transition: left .3s ease;
+  z-index: 1;
+}
+
+.theme-toggle.active::after {
+  left: 26px;
+}
+
+.theme-toggle:hover {
+  background-color: var(--link-color);
+  border-color: var(--link-color);
+}
+
+.theme-toggle:hover i {
+  color: #fff;
+}
+
+/* SECTION 1: Hero */
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  margin: 50px 0;
+  margin-bottom: 100px;
+  gap: 40px;
+}
+
+.hero-section .headshot {
+  order: 2;
+  margin-left: auto;
+}
+
+.hero-section .text {
+  flex: 5;
+}
+
+.hero-section .text h2 {
+  font-size: 45px;
+}
+
+.hero-section .text .links {
+  margin-top: 25px;
+}
+
+.hero-section .text .links a {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 2px solid var(--link-color);
+  border-radius: 5px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  transition: .1s;
+}
+
+.hero-section .text .links a:hover {
+  color: var(--text-color);
+  border: 2px solid var(--text-color);
+}
+
+.hero-section .headshot {
+  flex: 2;
+  display: flex;
+  justify-content: right;
+}
+
+.hero-section .headshot img {
+  width: 350px;
+  border-radius: 50%;
+}
+
+/* SECTION 2: Achievement */
+.achievement-section {
+  padding: 0 50px;
+  margin-bottom: 100px;
+}
+
+.achievement-section h2 {
+  text-align: center;
+  font-size: 35px;
+}
+
+.achievement-section .text {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Achievements list styling */
+.achievement-section .achievements {
+  max-width: 900px;
+  margin: 20px auto 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 0 10px;
+}
+
+.achievement-section .achievement {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(0,0,0,0.06);
+  padding: 14px 18px;
+  border-radius: 8px;
+}
+
+.achievement-section .achievement h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.achievement-section .achievement p {
+  margin: 6px 0 0 0;
+  color: var(--text-color);
+  opacity: 0.9;
+}
+
+.achievement-section .cells {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.achievement-section .cells .cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  width: 200px;
+  padding: 10px 20px;
+  margin: 10px;
+  border: 1.5px solid #d3d3d3;
+  border-radius: 5px;
+}
+
+.achievement-section .cells .cell img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  border-radius: 2px;
+}
+
+.achievement-section .cells .cell span {
+  font-size: 18px;
+}
+
+/* SECTION 3: Projects */
+.projects-section {
+  padding: 0 50px;
+  margin-bottom: 100px;
+}
+
+.projects-section h2 {
+  font-size: 35px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Projects list styling */
+.projects-section .projects-list {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin: 20px auto 40px auto;
+  flex-wrap: wrap;
+}
+
+.projects-section .project {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 10px;
+  padding: 18px 22px;
+  width: 280px;
+  box-sizing: border-box;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.projects-section .project h3 {
+  margin: 0 0 10px 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.projects-section .project p {
+  margin: 0;
+  color: var(--text-color);
+  opacity: 0.9;
+  font-size: 16px;
+}
+
+/* SECTION 4: Tech Stack */
+.tech-stack-section {
+  padding: 0 50px;
+  margin-bottom: 100px;
+}
+
+.tech-stack-section h2 {
+  text-align: center;
+  font-size: 35px;
+}
+
+.tech-stack-section .text {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.tech-stack-section .cells {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.tech-stack-section .cells .cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  width: 120px;
+  height: 120px;
+  padding: 10px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.tech-stack-section .cells .cell img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 2px;
+}
+
+.tech-stack-section .cells .cell span {
+  display: none;
+}
+
+/* SECTION 5: Contacts */
+.contacts-section {
+  padding: 0 50px;
+  margin-bottom: 100px;
+}
+
+.contacts-section h2 {
+  text-align: center;
+  font-size: 35px;
+  margin-bottom: 40px;
+}
+
+.contacts-container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.contact-info {
+  flex: 1;
+  text-align: center;
+}
+
+.contact-info h3 {
+  text-align: left;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.contact-info p {
+  text-align: left;	
+  font-size: 16px;
+  margin: 10px 0;
+  color: var(--text-color);
+}
+
+.social-media {
+  flex: 1;
+  text-align: center;
+}
+
+.social-media h3 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.social-links {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: var(--link-color);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 24px;
+  transition: background-color .3s ease, transform .3s ease;
+}
+
+.social-links a:hover {
+  background: var(--background-color);
+  color: var(--link-color);
+  transform: scale(1.1);
+}
+
+@media (max-width: 850px) {
+  /* SECTION 1: Hero */
+  .hero-section .text h2 {
+    font-size: 35px;
+  }
+}
+
+@media (max-width: 740px) {
+  /* SECTION 1: Hero */
+  .hero-section {
+    flex-direction: column-reverse;
+  }
+
+  .hero-section .headshot img {
+    width: 300px;
+  }
+
+  /* SECTION 3: Projects */
+  .projects-section {
+    text-align: center;
+  }
+
+  .projects-section .group {
+    flex-direction: column;
+  }
+
+  /* SECTION 4: Tech Stack */
+  .tech-stack-section {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  /* NAVBAR */
+  nav {
+    padding: 0 20px;
+  }
+
+  nav .right a {
+    font-size: 22px;
+  }
+
+  nav .right a:last-child {
+    color: var(--text-color);
+    background-color: transparent;
+    padding: 0;
+  }
+
+  nav .right a span {
+    display: none;
+  }
+
+  /* SECTION 1: Hero */
+  .hero-section {
+    padding: 0 20px;
+  }
+
+  .hero-section .text h2 {
+    font-size: 30px;
+  }
+
+  /* SECTION 2: Achievements */
+  .achievement-section {
+    padding: 0 20px;
+  }
+
+  .achievement-section .cells .cell span {
+    font-size: 16px;
+  }
+
+  /* SECTION 3: Projects */
+  .projects-section {
+    padding: 0 20px;
+  }
+
+  /* SECTION 4: Tech Stack */
+  .tech-stack-section {
+    padding: 0 20px;
+  }
 }

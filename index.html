@@ -1,34 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Student Portfolio</title>
-      <link rel="stylesheet" href="style.css">
-   </head>
-   <body>
-      <header>
-         <h1 id="name">Student Name</h1>
-         <img src="profile.jpg" alt="Profile Picture" id="profile-img">
-         <p id="course-year">Course - Year</p>
-         <button id="theme-toggle">Switch Theme</button>
-      </header>
-      <section id="achievements">
-         <h2>Achievements/Certifications</h2>
-         <ul>
-            <li>Achievement 1</li>
-            <li>Achievement 2</li>
-            <li>Achievement 3</li>
-         </ul>
-      </section>
-      <section id="projects">
-         <h2>Previous Projects</h2>
-         <ul>
-            <li>Project 1</li>
-            <li>Project 2</li>
-            <li>Project 3</li>
-         </ul>
-      </section>
-      <script src="script.js"></script>
-   </body>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="style.css">
+
+  <title>Portfolio</title>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav>
+    <div class="left">
+      <a href="/">Kieffer Lance A. Devera</a>
+    </div>
+
+    <div class="right">
+      <a href="https://github.com/KiefferLance" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-github"></i>
+        <span>Github</span>
+      </a>
+      
+      <a href="https://www.linkedin.com/in/lance-devera-4514b3325/" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-linkedin"></i>
+        <span>Linkedin</span>
+      </a>
+      
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme" title="Toggle light/dark">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <!-- SECTION 1: Hero -->
+    <section class="hero-section">
+      <div class="text">
+        <h2>Hi, I'm Kieffer Lance</h2>
+        <p>I’m Kieffer Lance A. Devera, a 2nd-year BS Computer Science student at Mapúa Malayan Colleges Mindanao. I’m passionate about technology, problem-solving, and building projects that help me grow as a future software developer.</p>
+
+        <div class="links">
+          <a href="#Achievements">
+            <i class="fa-solid fa-code"></i>
+            <span>Achievements</span>
+          </a>
+          
+          <a href="#projects">
+            <i class="fa-solid fa-project-diagram"></i>
+            <span>Projects</span>
+          </a>
+          
+          <a href="#tech-stack">
+            <i class="fa-solid fa-wrench"></i>
+            <span>Tech Stack</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="headshot">
+        <img src="source/Picture1.png" alt="Kieffer Lance headshot">
+      </div>
+    </section>
+    <section id="Achievements" class="achievement-section">
+      <h2>Achievements / Certifications</h2>
+
+      <div class="achievements">
+        <div class="achievement">
+          <h3>Dean’s Lister</h3>
+          <p>Recognized for outstanding academic performance in college.</p>
+        </div>
+
+        <div class="achievement">
+          <h3>Academic Excellence Award (SHS)</h3>
+          <p>Awarded for consistently high grades throughout Senior High School.</p>
+        </div>
+
+        <div class="achievement">
+          <h3>DAPRISA 1st Runner-Up (Table Tennis)</h3>
+          <p>Earned 1st runner-up in the DAPRISA table tennis competition, showcasing skill and sportsmanship.</p>
+        </div>
+
+        <div class="achievement">
+          <h3>DCAA Swimming Participant (2017)</h3>
+          <p>Represented school as a swimmer in the 2017 DCAA meet.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: Projects -->
+    <section id="projects" class="projects-section">
+      <h2>Projects Created</h2>
+
+      <div class="projects-list">
+        <div class="project">
+          <h3>JRoute</h3>
+          <p>A simple tool that helps users find jeepney routes around Davao City.</p>
+        </div>
+        <div class="project">
+          <h3>Sari-Sari Store Inventory & POS System</h3>
+          <p>A Java-based system that manages product stocks and sales for small stores.</p>
+        </div>
+        <div class="project">
+          <h3>Hotel Reservation System</h3>
+          <p>A basic application for booking, tracking, and managing hotel reservations.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: Tech Stack -->
+    <section id="tech-stack" class="tech-stack-section">
+      <h2>Tech Stack</h2>
+
+      <div class="text">
+        I work with a diverse set of technologies that support both software development and web development. My core programming experience includes Java, C++, and C#, which I use for building applications and solving algorithmic problems. For web development, I use HTML, CSS, and JavaScript to create responsive and user-friendly interfaces. I also work with MySQL for database management and Docker for containerization to streamline development and deployment. Together, these tools allow me to build efficient, scalable, and well-structured projects.
+      </div>
+
+      <div class="cells">
+        <div class="cell">
+          <img src="source\java-logo-11609365784e4gmvr3iyr.png" alt="Java logo">
+        </div>
+        <div class="cell">
+          <img src="source\png-clipart-c-logo-c-programming-language-icon-letter-c-blue-logo.png" alt="C++ logo">
+        </div>
+        <div class="cell">
+          <img src="source\Logo_C_sharp.svg.png" alt="C# logo">
+        </div>
+        <div class="cell">
+          <img src="source/html-logo.webp" alt="HTML logo">
+        </div>
+        <div class="cell">
+          <img src="source/css-logo.webp" alt="CSS logo">
+        </div>
+        <div class="cell">
+          <img src="source/javascript-logo.webp" alt="JavaScript logo">
+        </div>
+        <div class="cell">
+          <img src="source\mysql.png" alt="MySQL logo">
+        </div>
+        <div class="cell">
+          <img src="source\docker.png" alt="Docker logo">
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: Contacts -->
+    <section id="contacts" class="contacts-section">
+      <h2>Contact Me</h2>
+
+      <div class="contacts-container">
+        <div class="contact-info">
+          <h3>Get In Touch</h3>
+          <p><strong>Email:</strong> klDevera@mmcm.edu.ph</p>
+          <p><strong>Phone:</strong> 09777000318</p>
+        </div>
+
+        <div class="social-media">
+          <h3>Social Media</h3>
+          <div class="social-links">
+            <a href="https://www.facebook.com/kiefferlance.devera.29" target="_blank" rel="noopener noreferrer" title="Facebook">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/coper_nickus/" target="_blank" rel="noopener noreferrer" title="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
 </html>
